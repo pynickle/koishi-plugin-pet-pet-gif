@@ -26,12 +26,12 @@ export async function petgif(ctx: Context, session: Session, cfg: Config) {
 
     const content = session.quote.elements;
 
-    let index = content.findIndex(c => c.type === 'img');
+    let index = content.findIndex((c) => c.type === 'img');
 
     let imageUrl: string;
 
     if (index === -1) {
-        const indexInMsg = session.elements.findIndex(c => c.type === 'img');
+        const indexInMsg = session.elements.findIndex((c) => c.type === 'img');
         if (indexInMsg === -1) {
             return session.text('.noImageFound');
         } else {
