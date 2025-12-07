@@ -1,5 +1,4 @@
-import '@pynickle/koishi-plugin-adapter-onebot';
-import petPetGif from '@someaspy/pet-pet-gif';
+import petPetGif from 'pet-pet-gif';
 import { Schema, Context, Session, h } from 'koishi';
 
 export const name = 'pet-pet-gif';

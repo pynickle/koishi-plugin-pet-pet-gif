@@ -9,8 +9,7 @@ await build({
     platform: 'node',
     external: [
         'koishi',
-        '@pynickle/koishi-plugin-adapter-onebot',
-        '@someaspy/pet-pet-gif'
+        'pet-pet-gif'
     ],
     plugins: [yamlPlugin.yamlPlugin({})],
 })
