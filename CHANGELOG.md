@@ -1,3 +1,13 @@
+## [1.1.1](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.1.0...v1.1.1) (2025-12-07)
+
+### 🐛 Bug Fixes
+
+* fix ([4682699](https://github.com/pynickle/koishi-plugin-pet-pet-gif/commit/4682699923a6e3bbdac79c721c92243b5752670e))
+
+### 💄 Style Improvements
+
+* code style ([94131c9](https://github.com/pynickle/koishi-plugin-pet-pet-gif/commit/94131c93e9684e7dcc0eec56f8671282ec5456f9))
+
 ## [1.1.0](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.0.3...v1.1.0) (2025-12-07)
 
 ### ✨ Features
