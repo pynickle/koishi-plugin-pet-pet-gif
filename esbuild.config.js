@@ -9,7 +9,7 @@ await build({
     platform: 'node',
     external: [
         'koishi',
-        'pet-pet-gif'
+        'axios'
     ],
     plugins: [yamlPlugin.yamlPlugin({})],
 })

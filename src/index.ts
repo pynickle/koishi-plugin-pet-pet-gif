@@ -1,18 +1,16 @@
-import petPetGif from 'pet-pet-gif';
+import axios from 'axios';
 import { Schema, Context, Session, h } from 'koishi';
 
 export const name = 'pet-pet-gif';
 
 export interface Config {
-    resolution?: number;
-    delay?: number;
-    backgroundColor?: string;
+    apiUrl?: string;
 }
 
 export const Config: Schema<Config> = Schema.object({
-    resolution: Schema.number().default(128).description('生成 GIF 的分辨率'),
-    delay: Schema.number().default(20).description('每帧延迟（毫秒）'),
-    backgroundColor: Schema.string().default('transparent').description('背景颜色'),
+    apiUrl: Schema.string()
+        .default('https://api.popcat.xyz/v2/pet')
+        .description('生成 pet-pet GIF 的 API 地址'),
 });
 
 export function apply(ctx: Context, cfg: Config) {
@@ -22,7 +20,6 @@ export function apply(ctx: Context, cfg: Config) {
 }
 
 export async function petgif(ctx: Context, session: Session, cfg: Config) {
-    // 简单的实现：从命令参数中提取 URL
     const content = session.quote.elements;
 
     if (!content) {
@@ -36,14 +33,16 @@ export async function petgif(ctx: Context, session: Session, cfg: Config) {
     const imageUrl = content[0].attrs.src;
 
     try {
-        // 生成 GIF
-        const gifBuffer = await petPetGif(imageUrl, {
-            resolution: cfg.resolution,
-            delay: cfg.delay,
-            backgroundColor: cfg.backgroundColor,
+        // 请求外部 API 获取 GIF
+        const response = await axios.get(cfg.apiUrl, {
+            params: {
+                image: imageUrl,
+            },
+            responseType: 'arraybuffer',
         });
 
-        await session.send(h.image(gifBuffer, 'image/png'));
+        const gifBuffer = Buffer.from(response.data);
+        await session.send(h.image(gifBuffer, 'image/gif'));
     } catch (error) {
         ctx.logger.error('Error generating pet-pet GIF:', error);
         return session.text('.generationError');
