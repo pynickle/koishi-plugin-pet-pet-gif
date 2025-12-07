@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.0.3...v1.1.0) (2025-12-07)
+
+### ✨ Features
+
+* add image in msg recognization ([ffba1be](https://github.com/pynickle/koishi-plugin-pet-pet-gif/commit/ffba1bed3fdfc99c6fa7cf0f468671a14ebfc8b1))
+
 ## [1.0.3](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.0.2...v1.0.3) (2025-12-07)
 
 ### 🚀 Improvements
