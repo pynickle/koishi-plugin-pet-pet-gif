@@ -20,25 +20,17 @@ export function apply(ctx: Context, cfg: Config) {
 }
 
 export async function petgif(ctx: Context, session: Session, cfg: Config) {
-    if (!session.quote) {
-        return session.text('.noImageProvided');
-    }
-
-    const content = session.quote.elements;
-
-    let index = content.findIndex((c) => c.type === 'img');
-
     let imageUrl: string;
 
-    if (index === -1) {
-        const indexInMsg = session.elements.findIndex((c) => c.type === 'img');
-        if (indexInMsg === -1) {
-            return session.text('.noImageFound');
-        } else {
-            imageUrl = session.elements[indexInMsg].attrs.src;
-        }
-    } else {
-        imageUrl = content[index].attrs.src;
+    const findImage = (elements: any[]) => elements?.find((c) => c.type === 'img')?.attrs?.src;
+
+    const imageInQuote = session.quote ? findImage(session.quote.elements) : null;
+    const imageInMsg = findImage(session.elements);
+
+    imageUrl = imageInQuote ?? imageInMsg;
+
+    if (!imageUrl) {
+        return session.text('.noImageFound');
     }
 
     try {
