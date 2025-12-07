@@ -1,0 +1,14 @@
+{
+  "commands": {
+    "petgif": {
+      "description": "生成 pet-pet GIF",
+      "messages": {
+        "noImageProvided": "请提供图片 URL、@用户或回复包含图片的消息",
+        "noImageFound": "在{{message}}中未找到可用于生成 GIF 的图片",
+        "noAvatarFound": "用户{{user}}的头像未找到",
+        "generationError": "生成 GIF 时出错，请稍后重试",
+        "repliedMessage": "回复的消息"
+      }
+    }
+  }
+}
