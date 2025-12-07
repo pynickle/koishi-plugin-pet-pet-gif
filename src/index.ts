@@ -20,11 +20,11 @@ export function apply(ctx: Context, cfg: Config) {
 }
 
 export async function petgif(ctx: Context, session: Session, cfg: Config) {
-    const content = session.quote.elements;
-
-    if (!content) {
+    if (!session.quote) {
         return session.text('.noImageProvided');
     }
+
+    const content = session.quote.elements;
 
     if (content[0].type !== 'img') {
         return session.text('.noImageProvided');
@@ -33,7 +33,6 @@ export async function petgif(ctx: Context, session: Session, cfg: Config) {
     const imageUrl = content[0].attrs.src;
 
     try {
-        // 请求外部 API 获取 GIF
         const response = await axios.get(cfg.apiUrl, {
             params: {
                 image: imageUrl,
