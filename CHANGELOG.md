@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.0.1...v1.0.2) (2025-12-07)
+
+### 🐛 Bug Fixes
+
+* use api ([016d2c5](https://github.com/pynickle/koishi-plugin-pet-pet-gif/commit/016d2c50b28e8387980ba9b8a9eb9bc3790a9346))
+
 ## [1.0.1](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.0.0...v1.0.1) (2025-12-07)
 
 ### 🐛 Bug Fixes
