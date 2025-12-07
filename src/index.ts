@@ -26,11 +26,20 @@ export async function petgif(ctx: Context, session: Session, cfg: Config) {
 
     const content = session.quote.elements;
 
-    if (content[0].type !== 'img') {
-        return session.text('.noImageProvided');
-    }
+    let index = content.findIndex(c => c.type === 'img');
 
-    const imageUrl = content[0].attrs.src;
+    let imageUrl: string;
+
+    if (index === -1) {
+        const indexInMsg = session.elements.findIndex(c => c.type === 'img');
+        if (indexInMsg === -1) {
+            return session.text('.noImageFound');
+        } else {
+            imageUrl = session.elements[indexInMsg].attrs.src;
+        }
+    } else {
+        imageUrl = content[index].attrs.src;
+    }
 
     try {
         const response = await axios.get(cfg.apiUrl, {
