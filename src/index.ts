@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Schema, Context, Session, h } from 'koishi';
+import zhCN from './locales/zh-CN.json';
 
 export const name = 'pet-pet-gif';
 
@@ -14,7 +15,7 @@ export const Config: Schema<Config> = Schema.object({
 });
 
 export function apply(ctx: Context, cfg: Config) {
-    ctx.i18n.define('zh-CN', require('./locales/zh-CN.json'));
+    ctx.i18n.define('zh-CN', zhCN);
 
     ctx.command('petgif').action(async ({ session }) => await petgif(ctx, session, cfg));
 }
