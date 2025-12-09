@@ -2,7 +2,7 @@
   "name": "koishi-plugin-pet-pet-gif",
   "description": "Pet pet gif generation",
   "version": "1.1.1",
-  "main": "lib/index.cjs",
+  "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "type": "module",
   "files": [
