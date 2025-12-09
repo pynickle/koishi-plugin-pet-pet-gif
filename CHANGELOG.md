@@ -1,3 +1,9 @@
+## [1.1.2](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.1.1...v1.1.2) (2025-12-09)
+
+### 🔧 Miscellaneous Changes
+
+* test esm ([e77de0e](https://github.com/pynickle/koishi-plugin-pet-pet-gif/commit/e77de0ec79dfba8441ce45c211f9c625e61cf95a))
+
 ## [1.1.1](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.1.0...v1.1.1) (2025-12-07)
 
 ### 🐛 Bug Fixes
