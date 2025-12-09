@@ -1,3 +1,9 @@
+## [1.1.3](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.1.2...v1.1.3) (2025-12-09)
+
+### 🔧 Miscellaneous Changes
+
+* back to cjs ([a92c48c](https://github.com/pynickle/koishi-plugin-pet-pet-gif/commit/a92c48cb5ac436eace6b7d28f24708181b65d02e))
+
 ## [1.1.2](https://github.com/pynickle/koishi-plugin-pet-pet-gif/compare/v1.1.1...v1.1.2) (2025-12-09)
 
 ### 🔧 Miscellaneous Changes
